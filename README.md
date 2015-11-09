@@ -1,2 +1,2 @@
 # Team-Challenge
-My favorite candy is candy corn!
+My favorite candy is Skittles, especially the tropical kind!
