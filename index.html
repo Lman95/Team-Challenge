@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="TeameApp">
+<html lang="en" ng-app="TeamApp">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Join our Network</title>
-	<link rel="shortcut icon" href="">
+	<link rel="shortcut icon" href="http://icons.iconseeker.com/png/fullsize/frenzic-system/network-50.png">
 	<link rel="stylesheet" href="css/main.css"/>
 	<!-- load angular -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
 </head>
 <body>
 	<h2>Sign Up for our Network</h2>
-	<h6>You must be 16 years old to join</h6>
-	<label class="box"for="Email">Email</label><br>
-	<input type="email" class="box grind" name="Email" value="1" ng-model="bean.quantity"></input>
-	<button type="button" class="btn btn-default">Register</button>
+	<h6>You must be at least 16 years old to join</h6>
+	<form>
+	<label class="box"for="Email">Email:</label><br>
+	<input type="email" class="box grind" id="Email" name="Email" placeholder="email@address.com" ng-model="bean.quantity"></input><br>
+	<label for="fName">First Name:</label><br>
+	<input type="text" id="fName" name="fName" placeholder="John"><br>
+	<label for="lName">Last Name:</label><br>
+	<input type="text" id="lName" name="lName" placeholder="Smith"><br>
+	<label for="bday">Birthday:</label><br>
+	<input type="text" onfocus="(this.type='date')"  id="bday" placeholder="01/30/1990" name="bday"><br>
+	<label for="psw">Password:</label><br>
+	<input type="password" id="psw" name="psw" placeholder="Password"><br>
+	<label for="psw2">Password Confirmation:</label><br>
+	<input type="password" id="psw2" name="psw2" placeholder="Confirm Password"><br>
+	</form>
+	<button type="button" class="btn btn-default">Reset</button>
+	<button type="button" class="btn btn-primary">Register</button>
 </body>
 </html>
