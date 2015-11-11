@@ -22,6 +22,11 @@ input{
 button {
 	margin: 15px;
 }
+
+.help-block {
+	color: crimson;
+	font-weight: 600;
+}
 @media screen and (min-width: 992px) {
 	h2 {
 		font-size: 70px;

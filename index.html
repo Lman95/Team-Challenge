@@ -11,9 +11,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
 </head>
 <body>
+<div ng-controller="TeamCtrl">
 	<h2>Sign Up for our Network</h2>
 	<h6>You must be at least 16 years old to join</h6>
-	<form>
+	<form name="newForm">
 	<label class="box"for="Email">Email:</label><br>
 	<input type="email" class="box grind" id="Email" name="Email" placeholder="email@address.com" ng-model="bean.quantity"></input><br>
 	<label for="fName">First Name:</label><br>
@@ -23,12 +24,17 @@
 	<label for="bday">Birthday:</label><br>
 	<input type="text" onfocus="(this.type='date')"  id="bday" placeholder="01/30/1990" name="bday"><br>
 	<label for="psw">Password:</label><br>
-	<input type="password" id="psw" name="psw" placeholder="Password"><br>
-	<label for="psw2">Password Confirmation:</label><br>
-	<input type="password" id="psw2" name="psw2" placeholder="Confirm Password"><br>
-	<p ng-show="psw2.$invalid" class="help-block">Passwords must match</p>
+	<input type="password" id="psw" name="psw" placeholder="Password" ng-model="psw" required><br>
+	<div class="form-group" ng-class="{ 'has-error': newForm.psw2.$invalid && !newForm.psw2.$pristine }">
+		<label for="psw2">Password Confirmation:</label><br>
+		<input type="password" id="psw2" name="psw2" placeholder="Confirm Password" ng-model="psw2" ng-keyup="checkPass()" required><br>
+		<p ng-show="newForm.psw2.$invalid && !newForm.psw2.$pristine" class="help-block">Passwords must match</p>
+	</div>
 	</form>
 	<button type="button" class="btn btn-default">Reset</button>
 	<button type="button" class="btn btn-primary">Register</button>
+</div>
+<!-- Load our script -->
+<script src="js/app.js"></script>
 </body>
 </html>
