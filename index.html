@@ -26,6 +26,7 @@
 	<input type="password" id="psw" name="psw" placeholder="Password"><br>
 	<label for="psw2">Password Confirmation:</label><br>
 	<input type="password" id="psw2" name="psw2" placeholder="Confirm Password"><br>
+	<p ng-show="psw2.$invalid" class="help-block">Passwords must match</p>
 	</form>
 	<button type="button" class="btn btn-default">Reset</button>
 	<button type="button" class="btn btn-primary">Register</button>

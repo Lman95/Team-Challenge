@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('SocialNetwork', [])
-    .controller('SocialCtrl', ['$scope', '$http', function($scope, $http) {
+angular.module('TeamApp', [])
+    .controller('TeamCtrl', ['$scope', '$http', function($scope, $http) {
 
     }]);
 
