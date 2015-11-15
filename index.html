@@ -21,6 +21,7 @@
 			<label class="box"for="Email">Email:</label><br>
 			<input type="email" id="Email" name="Email" placeholder="email@address.com" ng-model="Email" ng-keyup="checkEmail()" required></input><br>
 			<p ng-show="newForm.Email.$invalid && !newForm.Email.$pristine" class="help-block">Email must be valid</p>
+			<p ng-show="newForm.Email.$invalid && newForm.Email.$touched && newForm.Email.$pristine" class="help-block">must enter an email</p>
 		</div>
 		<label for="fName">First Name:</label><br>
 		<input type="text" id="fName" name="fName" placeholder="John"><br>
