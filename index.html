@@ -41,7 +41,7 @@
 			<input type="password" id="psw2" name="psw2" placeholder="Confirm Password" ng-model="psw2" ng-keyup="checkPass()" required><br>
 			<p ng-show="newForm.psw2.$invalid && !newForm.psw2.$pristine" class="help-block">Passwords must match</p>
 		</div>
-		<button type="reset" class="btn btn-default" ng-click="reset()">Reset</button>
+		<button type="reset" class="btn btn-default" id="resetButton" ng-click="reset()">Reset</button>
 		<button type="button" class="btn btn-primary" ng-model="submitting" ng-disabled="newForm.$invalid || newForm.$pristine" ng-click="submit(); success()">Register</button>
 	</form>
 </div>
