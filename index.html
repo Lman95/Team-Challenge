@@ -14,37 +14,36 @@
 <div ng-controller="TeamCtrl">
 	<h2>Sign Up for our Network</h2>
 	<h6>You must be at least 16 years old to join</h6>
-	<div ng-show="!newForm.Email.$invalid && !newForm.Email.$pristine && !newForm.lastName.$invalid && !newForm.lastName.$pristine && !newForm.bDay.$invalid && !newForm.bDay.$pristine && !newForm.psw2.$invalid && !newForm.psw2.$pristine && !newForm.submitting.$invalid" class="alert alert-success">
-  		<strong>Success!</strong> You have successfully signed up.
+	<div id="success">
 	</div>
 	<form name="newForm">
-	<div class="form-group" ng-class="{ 'has-error': newForm.Email.$invalid && !newForm.Email.$pristine }">	
-		<label class="box"for="Email">Email:</label><br>
-		<input type="email" id="Email" name="Email" placeholder="email@address.com" ng-model="Email" ng-keyup="checkEmail()" required></input><br>
-		<p ng-show="newForm.Email.$invalid && !newForm.Email.$pristine" class="help-block">Email must be valid</p>
-	</div>
-	<label for="fName">First Name:</label><br>
-	<input type="text" id="fName" name="fName" placeholder="John"><br>
-	<div class="form-group" ng-class="{ 'has-error': newForm.lastName.$invalid && !newForm.lastName.$pristine }">
-		<label for="lastName">Last Name:</label><br>
-		<input type="text" id="lastName" name="lastName" placeholder="Smith" ng-model="lastName" ng-keyup="checkName()" required><br>
-		<p ng-show="newForm.lastName.$invalid && !newForm.lastName.$pristine" class="help-block">Last name required</p>
-	</div>
-	<div class="form-group" ng-class="{ 'has-error': newForm.bDay.$invalid && !newForm.bDay.$pristine }">
-		<label for="bDay">Birthday:</label><br>
-		<input type="text" id="bDay" name="bDay" name="bDay" placeholder="01/30/1990" ng-model="bDay" ng-keyup="checkBirth()" required><br>
-		<p ng-show="newForm.bDay.$invalid && !newForm.bDay.$pristine" class="help-block">You must be 16 years old to use this application</p>
-	</div>
-	<label for="psw">Password:</label><br>
-	<input type="password" id="psw" name="psw" placeholder="Password" ng-model="psw" required><br>
-	<div class="form-group" ng-class="{ 'has-error': newForm.psw2.$invalid && !newForm.psw2.$pristine }">
-		<label for="psw2">Password Confirmation:</label><br>
-		<input type="password" id="psw2" name="psw2" placeholder="Confirm Password" ng-model="psw2" ng-keyup="checkPass()" required><br>
-		<p ng-show="newForm.psw2.$invalid && !newForm.psw2.$pristine" class="help-block">Passwords must match</p>
-	</div>
+		<div class="form-group" ng-class="{ 'has-error': newForm.Email.$invalid && !newForm.Email.$pristine }">
+			<label class="box"for="Email">Email:</label><br>
+			<input type="email" id="Email" name="Email" placeholder="email@address.com" ng-model="Email" ng-keyup="checkEmail()" required></input><br>
+			<p ng-show="newForm.Email.$invalid && !newForm.Email.$pristine" class="help-block">Email must be valid</p>
+		</div>
+		<label for="fName">First Name:</label><br>
+		<input type="text" id="fName" name="fName" placeholder="John"><br>
+		<div class="form-group" ng-class="{ 'has-error': newForm.lastName.$invalid && !newForm.lastName.$pristine }">
+			<label for="lastName">Last Name:</label><br>
+			<input type="text" id="lastName" name="lastName" placeholder="Smith" ng-model="lastName" ng-keyup="checkName()" required><br>
+			<p ng-show="newForm.lastName.$invalid && !newForm.lastName.$pristine" class="help-block">Last name required</p>
+		</div>
+		<div class="form-group" ng-class="{ 'has-error': newForm.bDay.$invalid && !newForm.bDay.$pristine }">
+			<label for="bDay">Birthday:</label><br>
+			<input type="text" id="bDay" name="bDay" name="bDay" placeholder="01/30/1990" ng-model="bDay" ng-keyup="checkBirth()" required><br>
+			<p ng-show="newForm.bDay.$invalid && !newForm.bDay.$pristine" class="help-block">You must be 16 years old to use this application</p>
+		</div>
+		<label for="psw">Password:</label><br>
+		<input type="password" id="psw" name="psw" placeholder="Password" ng-model="psw" required><br>
+		<div class="form-group" ng-class="{ 'has-error': newForm.psw2.$invalid && !newForm.psw2.$pristine }">
+			<label for="psw2">Password Confirmation:</label><br>
+			<input type="password" id="psw2" name="psw2" placeholder="Confirm Password" ng-model="psw2" ng-keyup="checkPass()" required><br>
+			<p ng-show="newForm.psw2.$invalid && !newForm.psw2.$pristine" class="help-block">Passwords must match</p>
+		</div>
+		<button type="reset" class="btn btn-default" ng-click="reset()">Reset</button>
+		<button type="button" class="btn btn-primary" ng-model="submitting" ng-disabled="newForm.$invalid" ng-click="submit(); success()">Register</button>
 	</form>
-	<button type="button" class="btn btn-default">Reset</button>
-	<button type="button" class="btn btn-primary" ng-model="submitting" ng-click="submit()">Register</button>
 </div>
 <!-- Load our script -->
 <script src="js/app.js"></script>

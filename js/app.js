@@ -49,5 +49,15 @@ angular.module('TeamApp', [])
                 $scope.newForm.Email.$setValidity('Email', false);
             }
         }
+
+        $scope.success = function() {
+            document.getElementById("success").innerHTML = "<div class='alert alert-success'><strong>Success!</strong> You have successfully signed up.</div>";
+            //document.getElementById("success").style.visibility = "visible";
+        }
+
+        $scope.reset = function() {
+            document.getElementById("success").innerHTML = "";
+            //document.getElementById("success").style.visibility = "hidden";
+        }
     }]);
 
