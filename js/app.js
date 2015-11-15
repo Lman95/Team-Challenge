@@ -19,25 +19,26 @@ angular.module('TeamApp', [])
         }
         $scope.checkBirth = function() {
         	var today = new Date();
-        	today.setYear(today.getFullYear() - 16);
-        	var userDay = $scope.bDay;
-        	var birthYear = userDay.substring(userDay.length - 4);
-        	var birthMonth = userDay.substring(0, 2);
-        	var birthDate = userDay.substring(userDay.length - 7, userDay.length - 5);
-        	if(birthYear < today.getFullYear()) {
-        		$scope.newForm.bDay.$setValidity('bDay', true);
-            } else if (birthYear == today.getFullYear()) {
-            	if (birthMonth < today.getMonth() + 1) {
-            		$scope.newForm.bDay.$setValidity('bDay', true);
-            	} else if (birthMonth == today.getMonth() + 1) {
-            		if (birthDate <= today.getDate()) {
-            			$scope.newForm.bDay.$setValidity('bDay', true);
-            		} else {
-                		$scope.newForm.bDay.$setValidity('bDay', false);
-                	} 
+            today.setYear(today.getFullYear() - 16);
+            var userDay = $scope.bDay;
+            var ansLength = userDay.length;
+            var birthYear = userDay.substring(ansLength - 4);
+            var birthMonth = userDay.substring(0, 2);
+            var birthDate = userDay.substring(ansLength - 7, ansLength - 5);
+            if(birthYear < today.getFullYear() && ansLength == 10) {
+                $scope.newForm.bDay.$setValidity('bDay', true);
+            } else if (birthYear == today.getFullYear() && ansLength == 10) {
+                if (birthMonth < today.getMonth() + 1) {
+                    $scope.newForm.bDay.$setValidity('bDay', true);
+                } else if (birthMonth == today.getMonth() + 1) {
+                    if (birthDate <= today.getDate()) {
+                        $scope.newForm.bDay.$setValidity('bDay', true);
+                    } else {
+                        $scope.newForm.bDay.$setValidity('bDay', false);
+                    } 
                 } else {
-                	$scope.newForm.bDay.$setValidity('bDay', false);
-               	}
+                    $scope.newForm.bDay.$setValidity('bDay', false);
+                }
             } else {
                $scope.newForm.bDay.$setValidity('bDay', false);
             }

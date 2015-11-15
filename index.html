@@ -32,7 +32,7 @@
 		<div class="form-group" ng-class="{ 'has-error': newForm.bDay.$invalid && !newForm.bDay.$pristine }">
 			<label for="bDay">Birthday:</label><br>
 			<input type="text" id="bDay" name="bDay" name="bDay" placeholder="01/30/1990" ng-model="bDay" ng-keyup="checkBirth()" required><br>
-			<p ng-show="newForm.bDay.$invalid && !newForm.bDay.$pristine" class="help-block">You must be 16 years old to use this application</p>
+			<p ng-show="newForm.bDay.$invalid && !newForm.bDay.$pristine" class="help-block">You must be 16 years old to use this application (MM/DD/YYYY)</p>
 		</div>
 		<label for="psw">Password:</label><br>
 		<input type="password" id="psw" name="psw" placeholder="Password" ng-model="psw" required><br>

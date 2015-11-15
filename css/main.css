@@ -24,7 +24,7 @@ button {
 }
 
 .help-block {
-	color: crimson;
+	color: #880000;
 	font-weight: 600;
 }
 @media screen and (min-width: 992px) {
