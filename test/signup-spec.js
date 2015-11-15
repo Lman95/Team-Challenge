@@ -4,7 +4,7 @@ describe('network sign up page', function(){
     beforeEach(function() {
         browser.get('http://localhost:8000/');
     });
-
+    
     it('should be invalid on invalid email', function(){
         var email = element(by.id('Email'));
         email.sendKeys('missingat');
