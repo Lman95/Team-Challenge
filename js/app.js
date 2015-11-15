@@ -59,6 +59,6 @@ angular.module('TeamApp', [])
         $scope.reset = function() {
             document.getElementById("success").innerHTML = "";
             $scope.newForm.$setPristine();
-        }
+            $scope.newForm.$setUntouched();        }
     }]);
 
