@@ -53,7 +53,9 @@ angular.module('TeamApp', [])
 
         $scope.success = function() { //alerts the user of a valid account registration
             document.getElementById("success").innerHTML = "<div class='alert alert-success'><strong>Success!</strong> You have successfully signed up.</div>";
-
+            document.getElementById("newForm").reset();
+            $scope.newForm.$setPristine();
+            $scope.newForm.$setUntouched();
         }
 
         $scope.reset = function() { //resets form after successful account creation
